@@ -2,3 +2,6 @@
     -> Tried to create new branch named DEV using command pallate but showed,
         FATAL error as follows'HEAD' is not a commit and a branch 'dev' cannot be created from it
     Solution: Therefore I created Porject doc text file and commiting it with a first message.
+
+2> Created dev branch using command pallate - (All branch name should be in lowercase for maintainability purpose)
+    -> 2nd commit in main branch with updated text file.
