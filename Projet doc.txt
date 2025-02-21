@@ -1,0 +1,4 @@
+1> Initialized repo using VS codes GUI on the 4th icon in rop left corner
+    -> Tried to create new branch named DEV using command pallate but showed,
+        FATAL error as follows'HEAD' is not a commit and a branch 'dev' cannot be created from it
+    Solution: Therefore I created Porject doc text file and commiting it with a first message.
