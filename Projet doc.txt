@@ -29,7 +29,7 @@ For this project, we will use GitFlow work-flow because of following reasonns,
     - scaled easily
     - keeps 'main' branch stable
 
-    Workflow, 
+    Branching Structure, 
 
     Main Branches:
         2 Main branches that will always be in the repo,
@@ -45,4 +45,42 @@ For this project, we will use GitFlow work-flow because of following reasonns,
     Release & Hotfix Branches (More advanced: At the time of scaling):
             release/v1.0 - For preparing satble release version
             hotfix/fix-api-bug - for urgent fixes to production issues in main branch
+
+    Workflow:
+
+    Create feature branches from develop as required using following comand,
+        git checkout -b feature/<branch-name> - each branch represents individual feature.
+
+        -> after working on that feature locally commit the feature and push it to the related feature branch using following commands,
+
+        git add . (Adds all the changes into staging area)
+        git commit -m "Message you want to type"
+        git push origin feature/<branch-name> - pushing local branch content to remote located at origin
+
+        -> After pushing it to origin, merge that branch into dev when it is ready, to do that do the following steps,
+
+        git checkout dev - checkout to dev branch
+        git merge feature/<branch-name> - Merge the feature with existing code in dev branch (Merge conflict resolution)
+        git push origin dev - Pushing updated dev branch to remote repo on GitHub located at origin.
+
+        -> If merge is successful and you do not need extra branch then delete feature/<branch-name>,
+        git branch -d feature/<branch-name> - It deletes the branch from local repo
+        git push origin --delete feature//<branch-name> - Deletes branch from remote repo
+
+        -> If develop is stable at some point, merge it into main branch to enhance the production functionality
+        git checkout main - changing branch to main
+        git merge dev - merge dev into main locally
+        git push origin main - updates main branch located at remote origin with locally updated main
+
+4> Creation of Remote repository and pushing local onto remote.
+    Created repo online on GitHub
+    Addedd origin in local using following command - 'git remote add origin https://github.com/Meet1590/trading-bot.git
+    verify origin using - 'git remote -v'
+    checkout branches which you want to push to remote and type - 'git push origin <branch-name>'
+
+5> Pull request - Making pull request is useful while merging changes from remote branch to local branch.
+    They are used to communicate changes to a branch in a repository. Once it is opened, code changes can be reviewed with
+    colabs and add commits.
+
+    It display the differences/diffs between the content in the source branch and content in target branch.
 
