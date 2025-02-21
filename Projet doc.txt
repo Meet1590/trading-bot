@@ -5,3 +5,44 @@
 
 2> Created dev branch using command pallate - (All branch name should be in lowercase for maintainability purpose)
     -> 2nd commit in main branch with updated text file.
+
+    Observation: When I observed after above steps I found that dev branch contains replica of main branch when it was created,
+                    it does not have any changes or commits I did on main branch after the creation operation. As I can conclude,
+                    if you commit on a different branch then it would not impact any other branch.
+
+Branching:
+        Main - This branch will serve as a source code for the trading robot (Production)
+        Dev  - This branch will be used for the development purpose, code playground.
+        Test - This branch will be used for testing purpose as a copy of dev branch
+    Any other sub branches that are created will be written down below with name and purpose.
+
+
+3> After writing above ccontent I tried to checkout to dev branch but is showed warning that I should do one of the following,
+        1> Stash and Checkout - Temp. save uncommited but staged changes which can be restored later on.
+        2> Migrate & Checkout - Update the dev branch with the updated copy from main.
+        3> Force Checkout - Discard all local changes, file in the main will be replaced with the file in dev.
+
+    I Stashed all the changes and checked-out to dev branch.
+
+For this project, we will use GitFlow work-flow because of following reasonns,
+    - Simple for bigginers
+    - scaled easily
+    - keeps 'main' branch stable
+
+    Workflow, 
+
+    Main Branches:
+        2 Main branches that will always be in the repo,
+            1> main - Stable production ready version
+            2> dev - active dev branch where new features will be continously integrated and tested before copying into main.
+
+    Feature-specific Branches:
+        Seperate branch for separate feature will be created and merged into dev branch when completed.
+            Example:
+                feature/data-source -> Featches data from APIs
+                feature/preprocessing -> Cleans and transforms raw data
+
+    Release & Hotfix Branches (More advanced: At the time of scaling):
+            release/v1.0 - For preparing satble release version
+            hotfix/fix-api-bug - for urgent fixes to production issues in main branch
+
