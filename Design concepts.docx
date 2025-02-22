@@ -1,0 +1,33 @@
+1> Core design principlpes:
+
+    a> Encapsulation: Each class should well defined role, and also hides internal logic
+    b> Single responsibility principle(SRP):
+        Each class should have only one reason to change, only one source of truth for the class.
+    c> Open/Closed principle (OCP):
+        The system should be open for expention but closed for any modifications.
+    d> Dependency inversion principle(DIP):
+        High level module should not depend on low level modules; both should depend on abstractions (interfaces)
+    e> Stratagy pattern: Enables easy switching between APIs.
+    f> Factory pattern: Creates appropriate dara sources dynamically.
+
+
+2> Interface designs and interfaces used:
+
+    Each interface name should start with 'I' indicating interface.
+    Each interface should be abstract, having abstract method declared in Interface class
+
+        For ex:
+        from abc import ABC, abstractmethod
+        class IDataSource
+            """ Interface for all data sources"""
+            
+
+            """Abstraction provide low coupling and ensures common structure"""
+            @abstractmethod
+            def fetch_data(self, symbol: str, interval: str): #Abstract Method defining declaring method structure for all the related classes.
+                pass
+
+3> Have a clear understanding of OOP principlpes and SOLID principlpes
+    OOP: Encapsulation, Inheritance, Polymorphism, Abstraction
+    SOLID: SRP, OCP, LSP, ISP, DIP
+    Design Patterns: Stratagy, Factory
